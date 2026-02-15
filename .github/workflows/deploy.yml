@@ -14,7 +14,7 @@ jobs:
 
       - name: Deploy via FTP/FTPS
         uses: SamKirkland/FTP-Deploy-Action@v4.3.6
-      with:
+    with:
         server: ${{ secrets.FTP_LOLIPOPSERVER }}
         username: ${{ secrets.FTP_LOLIPOPUSERNAME }}
         password: ${{ secrets.FTP_LOLIPOPPASSWORD }}
