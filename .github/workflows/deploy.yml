@@ -1,15 +1,19 @@
-name: Deploy to Lolipop
+name: Deploy to Lolipop (FTP)
+
 on:
   push:
-    branches:
-      - main
+    branches: [ "main" ]   # mainにpushしたらデプロイ（masterの場合はmasterに）
+
 jobs:
   web-deploy:
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v4
-    - name: Sync files
-      uses: SamKirkland/FTP-Deploy-Action@v4.3.5
+      - name: Checkout
+        uses: actions/checkout@v4  # 最新コードを取得
+        # 参考: actions/checkout v4 :contentReference[oaicite:1]{index=1}
+
+      - name: Deploy via FTP/FTPS
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.6
       with:
         server: ${{ secrets.FTP_LOLIPOPSERVER }}
         username: ${{ secrets.FTP_LOLIPOPUSERNAME }}
