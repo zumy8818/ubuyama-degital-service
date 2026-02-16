@@ -22,20 +22,20 @@ header {
 
 /* ロゴ画像の調整 */
 .logo-img {
+    width: 40px;
+    /* 横幅を40pxに固定 */
     height: 40px;
-    /* ロゴの高さを調整（お好みで変えてください） */
-    width: auto;
-    /* 横幅は自動計算 */
+    /* 高さを40pxに固定 */
+    object-fit: contain;
+    /* 画像の比率を保ちつつ枠内に収める */
     vertical-align: middle;
-    /* 横の文字と高さを合わせる */
-    margin-right: 10px;
-    /* ロゴと文字の間の隙間 */
+    margin-right: 12px;
+    /* ロゴと文字の間の間隔を少し調整 */
 }
 
 .company-name {
     display: flex;
     align-items: center;
-    /* 縦方向の真ん中に揃える */
     color: white;
     font-size: 1.2rem;
     font-weight: bold;
