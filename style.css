@@ -22,9 +22,9 @@ header {
 
 /* ロゴ画像の調整 */
 .logo-img {
-    width: 40px;
+    width: 100px;
     /* 横幅を40pxに固定 */
-    height: 40px;
+    height: 100px;
     /* 高さを40pxに固定 */
     object-fit: contain;
     /* 画像の比率を保ちつつ枠内に収める */
