@@ -90,7 +90,7 @@ header {
     display: flex;
     flex-direction: column;
     gap: 12px;
-    min-width: 250px;
+    min-width: 220px;
 }
 
 .nav-item-small {
@@ -118,11 +118,11 @@ header {
 .hero-text-content {
     color: #fff;
     /* 1. 全体に薄い「すりガラス」の背景を敷く */
-    background: rgba(0, 0, 0, 0.2);
+    /*background: rgba(0, 0, 0, 0.2);
     /* 黒を20%だけ敷いて文字を浮かせる */
-    backdrop-filter: blur(8px);
+    /*backdrop-filter: blur(8px);
     /* 背景を少しぼかす */
-    -webkit-backdrop-filter: blur(8px);
+    /*-webkit-backdrop-filter: blur(8px);
     /* Safari対応 */
 
     padding: 40px;
