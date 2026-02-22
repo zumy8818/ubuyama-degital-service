@@ -17,5 +17,5 @@ jobs:
           server: ${{ secrets.FTP_LOLIPOPSERVER }}
           username: ${{ secrets.FTP_LOLIPOPUSERNAME }}
           password: ${{ secrets.FTP_LOLIPOPPASSWORD }}
-          local-dir: public/
+          local-dir: ./
           server-dir: ${{ secrets.FTP_LOLIPOPSERVER_DIR }}
