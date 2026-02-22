@@ -16,7 +16,7 @@ body {
 }
 
 /* --- 2. ヘッダーエリア --- */
-header {
+/*header {
     position: absolute;
     top: 0;
     left: 0;
@@ -24,6 +24,14 @@ header {
     padding: 30px 40px;
     box-sizing: border-box;
     z-index: 100;
+}*/
+
+header{
+  position: relative;   /* ← absolute をやめる */
+  width: 100%;
+  padding: 30px 40px;
+  box-sizing: border-box;
+  z-index: 100;
 }
 
 .logo-img {
@@ -44,12 +52,12 @@ header {
 
 /* --- 3. ヒーローセクション（メイン表示） --- */
 .hero-section {
-    min-height: 100vh;
+    min-height: calc(100vh - 120vh);
     display: flex;
     flex-direction: column; 
     justify-content: center;
     /* ヘッダーのBOXに侵入させない「ガード」 */
-    padding-top: 150px; 
+    padding-top: 40px; 
     padding-left: 10%;
     padding-right: 5%;
     box-sizing: border-box;
