@@ -15,7 +15,6 @@ header {
     top: 0;
     left: 0;
     width: 100%;
-    height: 100px;
     padding: 20px 40px;
     box-sizing: border-box;
     z-index: 10;
@@ -84,6 +83,30 @@ header {
     font-size: 1.1rem;
     line-height: 2;
 }
+
+/* ヒーローセクション（画面全体の枠） */
+.hero-section {
+    min-height: 100vh;
+    display: flex;
+    /* 上下中央ではなく、上から並べる設定に変更 */
+    flex-direction: column; 
+    justify-content: center; /* 垂直方向の中央寄せは維持しつつ */
+    
+    /* 【解決策のキモ】ロゴが占有する「絶対に入らせない隙間」を上に作る */
+    padding-top: 120px; /* ロゴの高さ＋余裕分の余白を確保 */
+    padding-left: 10%;
+    box-sizing: border-box;
+}
+
+/* コンテナ（ロゴの下に並ぶ塊） */
+.hero-container {
+    display: flex;
+    align-items: flex-start; /* 上揃えにして重なりを回避 */
+    gap: 60px;
+    max-width: 1400px;
+    width: 100%;
+}
+
 
 /* コンテンツエリア */
 .container {
