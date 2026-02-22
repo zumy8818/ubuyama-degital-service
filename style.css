@@ -1,170 +1,140 @@
-/* 基本設定 */
+/* --- 1. 基本設定 --- */
 body {
     margin: 0;
     padding: 0;
-    font-family: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, sans-serif;
-    color: #333;
+    font-family: "ヒラギノ角ゴシック ProN W6", "Hiragino Kaku Gothic ProN", sans-serif;
+    color: #fff; /* 基本を白に統一 */
     line-height: 1.6;
     overflow-x: hidden;
-    /* 横揺れ防止 */
+    background-image: url('../../uds-hero-ubuyama-bg.png');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    /* 文字の可読性を上げる影 */
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.4), 0 4px 10px rgba(0, 0, 0, 0.2);
 }
 
-/* ヘッダー：会社名 */
+/* --- 2. ヘッダーエリア --- */
 header {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
-    padding: 20px 40px;
+    padding: 30px 40px;
     box-sizing: border-box;
-    z-index: 10;
+    z-index: 100;
 }
 
-/* ロゴ画像の調整 */
 .logo-img {
-    width: 100px;
-    /* 横幅を40pxに固定 */
-    height: 100px;
-    /* 高さを40pxに固定 */
+    width: 80px;
+    height: 80px;
     object-fit: contain;
-    /* 画像の比率を保ちつつ枠内に収める */
     vertical-align: middle;
-    margin-right: 12px;
-    /* ロゴと文字の間の間隔を少し調整 */
+    margin-right: 15px;
 }
 
 .company-name {
     display: flex;
     align-items: center;
-    color: white;
-    font-size: 1.2rem;
+    font-size: 1.3rem;
     font-weight: bold;
     letter-spacing: 0.05em;
 }
 
-.company-name {
-    color: white;
-    font-size: 1.2rem;
-    font-weight: bold;
-    letter-spacing: 0.05em;
-}
-
-/* ヒーローエリア（背景画像セクション） */
-.hero {
-    /* 画像を暗くして文字を読みやすくするフィルター */
-    background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('uds-hero-ubuyama-bg.png');
-    background-size: cover;
-    background-position: center;
-    background-attachment: fixed;
-    /* スクロール時に背景を固定（パララックス効果） */
-    height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: white;
-    text-align: center;
-}
-
-.hero-content h1 {
-    font-size: 2.8rem;
-    margin-bottom: 1rem;
-    letter-spacing: 0.1em;
-    line-height: 1.3;
-}
-
-.hero-content .sub-copy {
-    font-size: 1.6rem;
-    font-weight: bold;
-    margin-bottom: 2rem;
-    display: block;
-}
-
-.hero-content .description {
-    font-size: 1.1rem;
-    line-height: 2;
-}
-
-/* ヒーローセクション（画面全体の枠） */
+/* --- 3. ヒーローセクション（メイン表示） --- */
 .hero-section {
     min-height: 100vh;
     display: flex;
-    /* 上下中央ではなく、上から並べる設定に変更 */
     flex-direction: column; 
-    justify-content: center; /* 垂直方向の中央寄せは維持しつつ */
-    
-    /* 【解決策のキモ】ロゴが占有する「絶対に入らせない隙間」を上に作る */
-    padding-top: 120px; /* ロゴの高さ＋余裕分の余白を確保 */
+    justify-content: center;
+    /* ヘッダーのBOXに侵入させない「ガード」 */
+    padding-top: 150px; 
     padding-left: 10%;
+    padding-right: 5%;
     box-sizing: border-box;
 }
 
-/* コンテナ（ロゴの下に並ぶ塊） */
 .hero-container {
     display: flex;
-    align-items: flex-start; /* 上揃えにして重なりを回避 */
+    align-items: flex-start;
     gap: 60px;
     max-width: 1400px;
     width: 100%;
 }
 
+/* --- 4. ナビゲーションボタン --- */
+.hero-nav {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    min-width: 280px;
+}
 
-/* コンテンツエリア */
-.container {
-    padding: 100px 20px;
-    max-width: 800px;
-    margin: 0 auto;
+.nav-item-small {
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(8px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 8px;
+    padding: 15px 25px;
+    text-decoration: none;
+    color: #fff;
+    transition: all 0.3s ease;
+}
+
+.nav-item-small:hover {
+    background: rgba(255, 255, 255, 0.9);
+    color: #333;
+    transform: translateX(10px);
+}
+
+.contact-special {
+    background: rgba(0, 123, 255, 0.8);
+    border-color: #007bff;
+}
+
+/* --- 5. メインテキスト --- */
+.hero-text-content {
+    background: rgba(0, 0, 0, 0.2);
+    backdrop-filter: blur(8px);
+    padding: 40px;
+    border-radius: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    max-width: 600px;
+}
+
+.hero-title {
+    font-family: "HG明朝E", serif;
+    font-size: 3rem;
+    margin: 0 0 20px 0;
+}
+
+.hero-subtitle {
+    font-size: 1.6rem;
+    margin-bottom: 20px;
+}
+
+/* --- 6. その他セクション・フッター --- */
+.maintenance-text {
+    padding: 60px 20px;
     text-align: center;
+    background: rgba(0, 0, 0, 0.5);
 }
 
-.container p {
-    font-size: 1.1rem;
-    color: #666;
-}
-
-/* フッター */
 footer {
-    background: #333;
     padding: 30px;
     text-align: center;
     font-size: 0.8rem;
-    color: #fff;
+    background: #111;
 }
 
-/* モバイル・小画面用のレスポンシブ設定 */
+/* --- 7. レスポンシブ調整 --- */
 @media (max-width: 1024px) {
-    /* 1. 左右並びを解除して縦並びにする */
     .hero-container {
         flex-direction: column;
-        align-items: flex-start; /* 左揃えを維持 */
-        gap: 40px;               /* ロゴとテキストの間の余白 */
-        padding-top: 120px;      /* ロゴ（ヘッダー）と重ならないよう上に余白 */
+        gap: 40px;
     }
-
-    /* 2. ナビゲーション（ボタン群）を優先的に表示 */
-    .hero-nav {
-        width: 100%;
-        max-width: 320px;
-        order: 2; /* テキストの下に配置したい場合は数字を調整 */
-    }
-
-    /* 3. メインテキストのサイズを画面に合わせて最適化 */
-    .hero-text-content {
-        width: 100%;
-        padding: 30px;    /* 余白を少し削ってコンパクトに */
-        order: 1;         /* テキストを上に配置 */
-    }
-
     .hero-title {
-        font-size: 2.2rem; /* 文字を少し小さくして1行に収まりやすくする */
-    }
-}
-
-/* さらに小さいスマホ（iPhone等）用 */
-@media (max-width: 480px) {
-    .hero-title {
-        font-size: 1.8rem;
-    }
-    .hero-section {
-        padding: 0 20px; /* 端の余白を最小限に */
+        font-size: 2.2rem;
     }
 }
