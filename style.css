@@ -47,11 +47,11 @@ header {
     min-height: 100vh;
     display: flex;
     flex-direction: column; 
-    justify-content: center;
+    /*justify-content: center;
     /* ヘッダーのBOXに侵入させない「ガード」 */
     padding-top: 150px; 
     padding-left: 10%;
-    padding-right: 5%;
+    /*padding-right: 5%;*/
     box-sizing: border-box;
 }
 
